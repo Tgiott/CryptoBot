@@ -3,18 +3,25 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start:prod": "node --env-file=prod.env index",
-    "start:dev": " nodemon  --env-file=dev.env index"
+     "build": "tsc",
+   "prod": "node --env-file=prod.env dist/app.js", 
+    "dev": "nodemon --exec \"node --env-file=dev.env -r ts-node/register src/app.ts\" -e ts"
   },
+  
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@types/lodash": "^4.17.20",
     "axios": "^1.7.3",
-    "dotenv": "^16.4.5"
+    "dotenv": "^16.6.1",
+    "source-map-loader": "^5.0.0",
+    "ts-loader": "^9.5.2"
   },
   "devDependencies": {
-    "nodemon": "^3.1.4"
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
   }
 }
